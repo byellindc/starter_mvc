@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%=@team.name%></title>
+  <style>
+    body { background: <%= @team.color %> }
+  </style>
+</head>
+<body>
+  <h2><%=@team.name%></h2>
+  <p>Color: <%=@team.color%></p>
+  <p>Players: <%@team.players.each do |player|%>
+              <%=player.name%> 
+              <% end %> 
+  </p>
+</body>
+</html>
