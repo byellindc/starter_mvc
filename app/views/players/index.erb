@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Players</title>
+</head>
+<body>
+  <h1>Players</h1>
+  <ol><% @players.each do |player| %>
+    <li><%= player.name %></li>
+  <% end %></ol>
+</body>
+</html>
