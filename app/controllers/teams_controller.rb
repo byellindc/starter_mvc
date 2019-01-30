@@ -15,4 +15,9 @@ class TeamsController < ApplicationController
     team = Team.create(params)
     redirect to "/teams/#{team.id}"
   end
+
+  get '/teams/:id' do
+    @team = Team.find(params[:id])
+    erb :show
+  end 
 end

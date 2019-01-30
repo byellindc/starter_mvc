@@ -15,4 +15,9 @@ class PlayersController < ApplicationController
     player = Player.create(params)
     redirect to "/players/#{player.id}"
   end
+
+  get '/players/:id' do
+    @player = Player.find(params[:id])
+    erb :show
+  end 
 end
