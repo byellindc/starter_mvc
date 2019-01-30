@@ -6,4 +6,13 @@ class PlayersController < ApplicationController
     @players = Player.all
     erb :index
   end
+
+  get '/players/new' do
+    erb :new
+  end
+
+  post '/players' do
+    player = Player.create(params)
+    redirect to "/players/#{player.id}"
+  end
 end
