@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Player</title>
+</head>
+<body>
+  <h1>New Player</h1>
+  <form action="/players" method="POST">
+    <p>
+      <label for="name">Name:</label>
+      <input type="text" name="name">
+    </p>
+    <p>
+      <label for="height">Height:</label>
+      <input type="number" name="height" min="0">
+    </p>
+    <p>
+      <label for="sex">Sex:</label>
+      <input type="radio" name="sex" value="M"><br/>
+      <input type="radio" name="sex" value="F"><br/>
+      <input type="radio" name="sex" value="-"><br/>
+    </p>
+    <p>
+      <label for="nickname">Nickname:</label>
+      <input type="text" name="nickname">
+    </p>
+    <p>
+      <label for="skill">Skill:</label>
+      <input type="text" name="skill">
+    </p>
+    <p>
+      <label for="rating">Rating:</label>
+      <input type="number" name="rating" min="1" max="100">
+    </p>
+    <p>
+      <label for="team_id">Team:</label>
+      <select name="team_id">
+      <% @teams.each do |team| %>
+        <option value="<%= team.id %>"><%= team.name %></option>
+      <% end %>
+      </select>
+    </p>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
