@@ -8,6 +8,7 @@ class PlayersController < ApplicationController
   end
 
   get '/players/new' do
+    @teams = Team.all
     erb :new
   end
 
@@ -20,4 +21,23 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
     erb :show
   end 
+
+  get '/players/:id/edit' do
+    @teams = Team.all
+    @player = Player.find(params[:id])
+    erb :edit
+  end
+
+  patch '/players/:id' do
+    Player.update(params[:id], name: params[:name], 
+      height: params[:height], sex: params[:sex], 
+      nickname: params[:nickname], skill: params[:skill],
+      rating: params[:rating])
+    redirect to "/players/#{params[:id]}"
+  end
+
+  delete '/players/:id' do
+    Player.delete(params[:id])
+    redirect to "/players"
+  end
 end

@@ -5,7 +5,7 @@ team3 = Team.create(name: "Bad Muffins", color: "BlanchedAlmond", sport: "Cookin
 
 Player.delete_all
 player1 = Player.create(name: "Bob", height: 70, sex: "M", nickname:"Thababo", skill: "Friendship", rating: 28, team: team1)
-player2 = Player.create(name: "Robb", height: 70, sex: "M", nickname:"Thababo", skill: "Friendship", rating: 28, team: team1)
-player3 = Player.create(name: "Clobb", height: 70, sex: "M", nickname:"Thababo", skill: "Friendship", rating: 28, team: team1)
-player4 = Player.create(name: "Stobb", height: 70, sex: "M", nickname:"Thababo", skill: "Friendship", rating: 28, team: team1)
+player2 = Player.create(name: "Robb", height: 70, sex: "M", nickname:"Thababo", skill: "Friendship", rating: 8, team: team2)
+player3 = Player.create(name: "Clobb", height: 70, sex: "M", nickname:"Thababo", skill: "Friendship", rating: 68, team: team1)
+player4 = Player.create(name: "Stobb", height: 70, sex: "M", nickname:"Thababo", skill: "Friendship", rating: 98, team: team3)
 

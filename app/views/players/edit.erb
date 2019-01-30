@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit <%= @player.name %></title>
+</head>
+<body>
+  <h1>Edit Player</h1>
+  <form action="/players/<%= @player.id %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+    <p>
+      <label for="name">Name:</label>
+      <input type="text" name="name" value="<%= @player.name %>">
+    </p>
+    <p>
+      <label for="height">Height:</label>
+      <input type="number" name="height" min="0" value="<%= @player.height %>">
+    </p>
+    <p>
+      <label for="sex">Sex:</label>
+      <input type="radio" name="sex" value="M" <% if @player.sex == 'M' %>checked<% end %>><label for="M">Male</label><br/>
+      <input type="radio" name="sex" value="F" <% if @player.sex == 'F' %>checked<% end %>><label for="F">Female</label><br/>
+      <input type="radio" name="sex" value="-" <% if @player.sex == '-' %>checked<% end %>><label for="-">Other</label><br/>
+    </p>
+    <p>
+      <label for="nickname">Nickname:</label>
+      <input type="text" name="nickname" value="<%= @player.nickname %>">
+    </p>
+    <p>
+      <label for="skill">Skill:</label>
+      <input type="text" name="skill" value="<%= @player.skill %>">
+    </p>
+    <p>
+      <label for="rating">Rating:</label>
+      <input type="number" name="rating" min="1" max="100" value="<%= @player.rating %>">
+    </p>
+    <p>
+      <label for="team_id">Team:</label>
+      <select name="team_id">
+      <% @teams.each do |team| %>
+        <option value="<%= team.id %>" <% if @player.team == team %>selected<% end %>><%= team.name %></option>
+      <% end %>
+      </select>
+    </p>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

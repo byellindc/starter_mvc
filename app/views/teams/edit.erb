@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit <%= @team.name %></title>
+</head>
+<body>
+  <h1>New Team</h1>
+  <form action="/teams/<%= @team.id %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+    <p>
+      <label for="name">Name:</label>
+      <input type="text" name="name" value="<%= @team.name %>">
+    </p>
+    <p>
+      <label for="color">Color:</label>
+      <input type="color" name="color" value="<%= @team.color %>">
+    </p>
+    <p>
+      <label for="sport">Sport:</label>
+      <input type="text" name="sport" value="<%= @team.sport %>">
+    </p>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

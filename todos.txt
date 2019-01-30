@@ -1,0 +1,3 @@
+* add team name alias (@player.team.name -> @player.team_name)
+* sort players by rating
+* add players in team edit

@@ -12,5 +12,11 @@
   <p>Skill: <%=@player.skill%></p>
   <p>Rating: <%=@player.rating%></p>
   <p>Team: <%=@player.team.name%></p>
+
+  <a href="/players/<%=@player.id%>/edit">Edit</a>
+  <form action="/players/<%=@player.id%>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+  </form>
 </body>
 </html>
